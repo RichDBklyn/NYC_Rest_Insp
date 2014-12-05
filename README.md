@@ -1,7 +1,7 @@
 NYC Restaurant Inspections
 ==========================
 
-Analysis of results of NYC restaurant inspections, 2011-2014
+Analysis of results of NYC restaurant inspections, 2011-2013
 
 ##OVERVIEW
 
@@ -10,12 +10,11 @@ Analysis of results of NYC restaurant inspections, 2011-2014
 ##DATA
 ###Raw Data
 
-**Source:** The New York City Department of Health and Hygiene (DOHMH) publishes the results of restaurant inspections on [NYC Open Data](https://data.cityofnewyork.us/Health/DOHMH-New-York-City-Restaurant-Inspection-Results/xx67-kt59).  This dataset was downloaded on December 4, 2014 subject to the following filtering conditions:
+**Source:** The New York City Department of Health and Hygiene (DOHMH) publishes the results of restaurant inspections on [NYC Open Data](https://data.cityofnewyork.us/Health/DOHMH-New-York-City-Restaurant-Inspection-Results/xx67-kt59).  This dataset was downloaded on December 4, 2014 subject to the following filtering condition:
 
-* inspection date prior to January 1, 2014
 * inspection type limited to cycle inspections
 
-**Description:** 428,817 records met the filtering conditions listed above.  Each record represents a single violation for which a restaurant was cited during an inspection.  In other words, if one restaurant inspection found three different violations, three separate records would be included in the dataset.  If no violations were found in the inpsection, the dataset would contain one record.
+**Description:** 429,903 records met the filtering conditions listed above.  Each record represents a single violation for which a restaurant was cited during an inspection.  In other words, if one restaurant inspection found three different violations, three separate records would be included in the dataset.  If no violations were found in the inpsection, the dataset would contain one record.
 
 **Variables Names, Types and Values**
 
@@ -37,11 +36,15 @@ CRITICAL FLAG         |Text      |Nature of violation        |"Critical" "Not Cr
 SCORE                 |Integer   |Total score for inspection |-1 to 156
 GRADE                 |Text      |                           |"A" "B" "C" "Z" "Not Yet Graded" (or blank)
 GRADE DATE            |Date      |                           |
-RECORD DATE           |Date      |Date of database version   |12/03/2014
+RECORD DATE           |Date      |Date of database version   |12/04/2014
 INSPECTION TYPE       |Text      |Type of cycle inspection   |"Initial Inspection" or "Re-inspection"
 
-
 ###Processed Data
+
+**Data Cleaning:** Two changes were made to the downloaded dataset:
+
+1. The "BUILDING" and "STREET" variables were combined into an "ADDRESS" variable
+2. The "RECORD DATE" variable was eliminated.  (It was the same value for each record.)
 
 ##EXPLORATORY ANALYSIS
 
