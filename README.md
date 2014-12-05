@@ -8,7 +8,7 @@ Each restaurant in New York City is subject to at least one inspection by the NY
 2. A numeric *score* based on the quantity and severity of code violations.
 3. A letter *grade* ("A" "B" or "C") based on the score.
 
-This research evaluated factors associated with the results of these inspections.  Specifically, it evaluated the impact of *type of cuisine*, *geographic location*, and *prior inspection results* on the likelihood a restaurant received a negative inspection outcome.
+This research examined factors that might be associated with the results of these inspections.  Specifically, it evaluated the impact of *type of cuisine*, *geographic location*, and *prior inspection results* on the likelihood a restaurant received a negative inspection outcome.
 
 ##DATA
 ###Raw Data
