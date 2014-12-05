@@ -26,23 +26,24 @@ STREET                |Text      |Street name                |
 ZIPCODE               |Integer   |5-digit zip code           |
 PHONE                 |Integer   |10-digit phone number      |
 CUISINE DESCRIPTION   |Text      |Type of food sold          |82 unique cuisines (plus "Not Listed/Not Applicable")
-INSPECTION DATE       |Date      |Inspection date            |
+INSPECTION DATE       |Date      |Date of inspection         |
 ACTION                |Text      |Result of inspection       |"Violations were cited..." "No violations..." "Establishment closed..." "Establishment re-closed"
 VIOLATION CODE        |Text      |Specific violation         |73 unqiue codes (or blank)
 VIOLATION DESCRIPTION |Text      |Name of violation          |83 unique descriptions (or blank)
 CRITICAL FLAG         |Text      |Nature of violation        |"Critical" "Not Critical" "Not Applicable"
 SCORE                 |Integer   |Total score for inspection |-1 to 156
-GRADE                 |Text      |                           |"A" "B" "C" "Z" "Not Yet Graded" (or blank)
-GRADE DATE            |Date      |                           |
+GRADE                 |Text      |Grade to be posted         |"A" "B" "C" "Z" "Not Yet Graded" (or blank)
+GRADE DATE            |Date      |Date grade issued          |
 RECORD DATE           |Date      |Date of database version   |12/04/2014
 INSPECTION TYPE       |Text      |Type of cycle inspection   |"Initial Inspection" or "Re-inspection"
 
 ###Processed Data
 
-**Cleaning Data:** Two changes were made to the downloaded dataset:
+**Cleaning Data:** Three changes were made to the downloaded dataset:
 
 1. The "BUILDING" and "STREET" variables were combined into an "ADDRESS" variable
 2. The "RECORD DATE" variable was eliminated.  (It was the same value for each record.)
+3. Certain values for text variables were shortened.
 
 **Creating Analytic Datasets:**
 
