@@ -13,7 +13,7 @@ This research examined factors that might be associated with the results of thes
 ##DATA
 ###Raw Data
 
-**Source:** The New York City Department of Health and Hygiene (DOHMH) publishes the results of restaurant inspections on [NYC Open Data](https://data.cityofnewyork.us/Health/DOHMH-New-York-City-Restaurant-Inspection-Results/xx67-kt59).  This dataset was downloaded on December 4, 2014 subject to the following filtering condition:
+**Source:** DOHMH regularly updates and publishes the results of its restaurant inspections on [NYC Open Data](https://data.cityofnewyork.us/Health/DOHMH-New-York-City-Restaurant-Inspection-Results/xx67-kt59).  This dataset was downloaded on December 4, 2014 subject to the following filtering condition:
 
 * inspection type limited to cycle inspections
 
