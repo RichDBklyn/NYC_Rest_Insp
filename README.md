@@ -41,10 +41,13 @@ INSPECTION TYPE       |Text      |Type of cycle inspection   |"Initial Inspectio
 
 ###Processed Data
 
-**Data Cleaning:** Two changes were made to the downloaded dataset:
+**Cleaning Data:** Two changes were made to the downloaded dataset:
 
 1. The "BUILDING" and "STREET" variables were combined into an "ADDRESS" variable
 2. The "RECORD DATE" variable was eliminated.  (It was the same value for each record.)
+
+**Creating Analytic Datasets:**
+
 
 ##EXPLORATORY ANALYSIS
 
