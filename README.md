@@ -5,8 +5,6 @@ Analysis of results of NYC restaurant inspections, 2011-2013
 
 ##OVERVIEW
 
-##OBJECTIVE
-
 ##DATA
 ###Raw Data
 
