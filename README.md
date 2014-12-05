@@ -1,7 +1,5 @@
-NYC Restaurant Inspections
-==========================
-
-Analysis of results of NYC restaurant inspections, 2011-2013
+NYC Restaurant Inspections, 2011-2013
+=====================================
 
 ##OVERVIEW
 Each restaurant in New York City is subject to at least one inspection by the NYC Department of Health and Hygiene (DOHMH). These inspections yield three different metrics to assess the level of a restaurant's compliance with health code requirement:
