@@ -13,13 +13,15 @@ This research examined factors that might be associated with the results of thes
 ##DATA
 ###Raw Data
 
-**Source:** DOHMH regularly updates and publishes the results of its restaurant inspections on [NYC Open Data](https://data.cityofnewyork.us/Health/DOHMH-New-York-City-Restaurant-Inspection-Results/xx67-kt59).  This dataset was downloaded on December 4, 2014 subject to the following filtering condition:
+**Source:** DOHMH updates and publishes the results of its restaurant inspections on [NYC Open Data](https://data.cityofnewyork.us/Health/DOHMH-New-York-City-Restaurant-Inspection-Results/xx67-kt59) on a regular (typically daily) basis.  It is important to note that the data do **not** represent the full universe of inspections DOHMH has conducted.  Instead, it contains inspection results only for restaurants *in active status* on the day the dataset is created: no information is provided for inspections conducted at restaurants that have gone out of business.  In addition, the dataset only contains resulst for inspections that have occurred *within three years of the most recent inspection*: if restaurants A and B both had an inspection on 11/30/2011 and restaurant A's most recent inspection is 11/29/2014 and restuarant B's is 12/1/2014, the dataset will contain the 11/30/2011 inspection results for restaurant A but not for restaurant B.  [A more detailed description of the dataset](www) and a [data dictionary](www) are available.  ***ADD LINKS*** 
+
+**Download:** A master dataset was created by downloading the entire inpsection result dataset for December 4, 2014, subject to the following filtering condition:
 
 * inspection type limited to cycle inspections
 
-**Description:** 429,903 records met the filtering conditions listed above.  Each record represents a single violation for which a restaurant was cited during an inspection.  In other words, if one restaurant inspection found three different violations, three separate records would be included in the dataset.  If no violations were found in the inpsection, the dataset would contain one record.
+**Master Dataset Description:** The 429,093 records meeting the filtering condition listed above represent a *violation-level* dataset: each record represents a single violation for which a restaurant was cited during an inspection.  (In other words, if one restaurant inspection found three different violations, three separate records would be included in the dataset.)  If no violations were found in the inspection, the dataset would contain one record.
 
-**Variables Names, Types and Values:**
+***Variables Names, Types and Values:***
 
 Name                  |Data Type |Description                |Values
 ----------------------|----------|---------------------------|-------------------------------------------------
