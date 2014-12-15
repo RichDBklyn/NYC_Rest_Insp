@@ -1,0 +1,104 @@
+---
+title: "HEALTH INSPECTIONS OF NYC RESTAURANTS - Violations"
+author: "Richard Delaney"
+date: "December 11, 2014"
+output: html_document
+---
+##Introduction
+Each restaurant in New York City is subject to at least one inspection per year by the NYC Department of Health and Hygiene (DOHMH). A research project examined data on these restaurant inspections in three phases:
+
+* A descriptive analysis of the universe of restaurants and the individual health violations for which they have been cited.
+* A descriptive analysis of the overall results of restaurant inspections.
+* A predictive analysis identifying current factors associated with future inspection results. 
+
+This document summarizes the first research phase.
+
+##Analytic Data Set
+DOHMH regularly publishes inspection results for every restaurant in active status on a specific date.  These published results go back three years from the date of each restaurant's last inspection.  A master data file covering all restaurants active on December 8, 2014 was downloaded from the NYC Open Data site and processed to create the analytic data set used in this phase of the research project.  (**INSERT LINK TO DOCUMENT RELATED TO DATA SET CREATION**)
+
+##Descriptive Metrics
+The analytic data set was summarized to yield the following metrics:
+
+**Size of Universe**
+
+1. *Number of Active Restaurants* 
+2. *Number of Inspections*
+3. *Number of Violations*
+4. *Inspections per Restaurant*
+5. *Violations per Inspection*
+6. *Violations per Inspection with Violations*
+
+**Geographic Distribution I**
+
+7. *Number of Active Restaurants by Borough*
+8. *Inspections per Restaurant by Borough*
+9. *Violations per Inspection by Borough*
+
+**Distribution of Violations by Type**
+
+10. *Number of Violations by Type*
+11. *Violations per Inspection by Type*
+
+**Distribution of Violations by Restaurant Cuisine**
+
+12. *Number of Active Restaurants by Cuisine*
+13. *Inspections per Restaurant by Cuisine*
+14. *Violations per Inspection by Cuisine*
+15. *Violation per Inspection by Type by Cuisine*
+
+**Patterns Over Time**
+
+16. *Violations per Inspection by Calendar Year*
+17. *Violations per Inspection by Type by Calendar Year*
+18. *Violations per Inspection by Type by Cuisine by Calendar Year*
+
+**Geographic Distribution II**
+
+19. *Violations per Inspection by Zip*
+20. *Violations per Inspection by Type by Zip*
+
+
+```{r eval=FALSE}
+##Read data file from current working directory
+ViolationDF<-read.csv("Violation Data File.csv")
+```
+
+```{r eval=FALSE}
+#Calculate "Size of Universe" metrics
+attach(ViolationDF)
+NumRest<-length(unique(CAMIS))
+NumInsp<-length(unique(INSPECTION.ID))
+NumViol<-sum(!TYPE=="No Violation")
+InspPerRest<-round(NumInsp/NumRest,2)
+ViolPerInsp<-round(NumViol/NumInsp,2)
+ViolPerInsp2<-round(NumViol/(NumInsp-sum(TYPE=="No Violation")),2)
+detach(ViolationDF)
+```
+
+```{r eval=FALSE}
+#Calculate "Geographic Distribution I" metrics
+attach(ViolationDF)
+RestDF<-ViolationDF[!duplicated(CAMIS),c(1,7:9)]
+detach(ViolationDF)
+attach(RestDF)
+RestByBoro<-summary(BORO)
+detach(RestDF)
+attach(ViolationDF)
+InspDF<-ViolationDF[!duplicated(INSPECTION.ID),c(11,1,3,7:9)]
+detach(ViolationDF)
+attach(InspDF)
+InspByBoro<-summary(BORO)
+detach(InspDF)
+attach(ViolationDF)
+ViolByBoro<-summary(BORO[!TYPE=="No Violation"])
+GeogDistI<-data.frame(RestByBoro,InspByBoro,
+      round(InspByBoro/RestByBoro,2),ViolByBoro,
+      round(ViolByBoro/InspByBoro,2))
+colnames(GeogDistI)<-c("Rest", "Insp","InspPerRest","Viol","ViolPerInsp")
+GeogDistI<-GeogDistI[order(-Rest),]
+detach(ViolationDF)
+```
+
+```{r eval=FALSE}
+#Calculate "Distribution of Violations by Type" metrics
+attach(ViolationDF)
