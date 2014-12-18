@@ -55,6 +55,7 @@ Four changes were made to the downloaded file to create a clean master dataset:
     * "Salads", "Sandwiches", "Sandwiches/Salads", "Soups" and "Soups & Sandwiches" were combined as "Soups/Sandwiches/Salads"
 4. Certain values for text variables were shortened.
 ***ADD LINK TO MASTER DATA SET***
+
 ###Processed Data
 
 The master dataset was processed to create three datasets used in descriptive analysis:
