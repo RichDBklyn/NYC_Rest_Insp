@@ -48,7 +48,12 @@ Three changes were made to the downloaded file to create a clean master dataset:
 
 1. The "BUILDING" and "STREET" variables were combined into an "ADDRESS" variable
 2. The "RECORD DATE" variable was eliminated.  (It was the same value for each record.)
-3. Certain values for text variables were shortened.
+3. The following discrete values in the "CUISINE DESCRIPTION" variable were collapsed:
+    * "Cajun", "Creole" and "Creole/Cajun" were combined as "Creole/Cajun"
+    * "Hotdogs" and "Hotdogs/Pretzels" were combined as "Hotdogs/Pretzels"
+    * "Pizza" and "Pizza/Italian" were combined as "Pizza"
+    * "Salads", "Sandwiches", "Sandwiches/Salads", "Soups" and "Soups & Sandwiches" were combined as "Soups/Sandwiches/Salads"
+4. Certain values for text variables were shortened.
 
 ###Processed Data
 
