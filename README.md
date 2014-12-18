@@ -8,7 +8,7 @@ Each restaurant in New York City is subject to at least one inspection by the NY
 2. A numeric *score* based on the quantity and severity of code violations.
 3. A letter *grade* ("A" "B" or "C") based on the score.
 
-This objectives of this research are both descriptive and predictive.  **Descriptive analyses** address how restaurant inspection results have varied based on three factors: *time*, *type of cuisine*, and *geographic location*.  **Predictive analyses** develop algorithms for determining the likelihood of future inspection results given tehse three factors as well as a restaurant's *prior inspection results*.
+This objectives of this research are both descriptive and predictive.  **Descriptive analyses** address how restaurant inspection results have varied based on three factors: *year*, *type of cuisine*, and *geographic location*.  **Predictive analyses** develop algorithms for determining the likelihood of future inspection results given tehse three factors as well as a restaurant's *prior inspection results*.
 
 ##DATA
 ###Raw Data
@@ -44,7 +44,7 @@ GRADE DATE            |Date      |Date grade issued          |
 RECORD DATE           |Date      |Date of database version   |12/04/2014
 INSPECTION TYPE       |Text      |Type of cycle inspection   |"Initial Inspection" or "Re-inspection"
 
-Three changes were made to the downloaded file to create a clean master dataset:
+Four changes were made to the downloaded file to create a clean master dataset:
 
 1. The "BUILDING" and "STREET" variables were combined into an "ADDRESS" variable
 2. The "RECORD DATE" variable was eliminated.  (It was the same value for each record.)
@@ -54,13 +54,20 @@ Three changes were made to the downloaded file to create a clean master dataset:
     * "Pizza" and "Pizza/Italian" were combined as "Pizza"
     * "Salads", "Sandwiches", "Sandwiches/Salads", "Soups" and "Soups & Sandwiches" were combined as "Soups/Sandwiches/Salads"
 4. Certain values for text variables were shortened.
-
+***ADD LINK TO MASTER DATA SET***
 ###Processed Data
 
-The master dataset was processed to create four analytic datasets:
+The master dataset was processed to create three datasets used in descriptive analysis:
 
-1. were
-**Datasets - Phase I Analysis:**
+1. [**Violation Data File**](www) ***ADD LINK***
+   * adds a unique identification number for each inspection included in the master dataset
+   * uses that inspection ID number and the violation code as the primary key
+   * adds a variable classifying each violation into one of five "TYPE"s
+   * drops variables not needed for analysis ("DBA" "ADDRESS" "VIOLATION DESCRIPTION" "GRADE DATE" and "INSPECTION TYPE"
+2. [**Inspection Data File**](www) ***ADD LINK***
+   * drops information on the specific violations cited in each inspection
+   * adds summary statistics for the number of violations cited (by "TYPE" and "CRITICAL FLAG")
+3. **Restaurant Data File**
 
 
 ##EXPLORATORY ANALYSIS
